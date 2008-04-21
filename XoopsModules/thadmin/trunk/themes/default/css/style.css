@@ -1,11 +1,11 @@
 @import url(menu.css);
 @import url(form.css);
 
-html{padding:0 10px;}
+html{padding:0;}
 body{
 margin:0;
+padding:0;
 background-color:#f1f1f1;
-padding:10px;
 color:#999;
 font-family:"Lucida Grande", Verdana, sans-serif;
 font-size:10pt;
@@ -18,7 +18,10 @@ border:1px solid #ccc;
 #xo-header{
 height:70px;
 padding:5px;
-background: url('../img/headerbg.png') repeat-x;;
+background: url('../img/xo-banner_bg.png') repeat-x;;
+}
+#xo-header span{
+color:#f1f1f1;
 }
 #xo-content {
 padding:10px;

@@ -8,11 +8,11 @@
           <a class="item" href="<{$xoops_url}>/"><{$smarty.const._AD_TH_SITEHOME}></a>
           <a class="item" href="javascript:void(0)"><{$smarty.const._AD_TH_LINKS}><img class="arrow" src="<{$theme_img}>/menuarrow1.gif" width="4" height="7" alt="" /></a>
           <div class="section">
-            <a class="item" href="http://www.xoops.org"><img class="image" src="<{$theme_icons}>/xoops.png" alt="" />Xoops.org</a>
-            <a class="item" href="http://www.frxoops.org"><img class="image" src="<{$theme_icons}>/xoops.png" alt="" />Xoops France</a>
+            <a class="item" href="http://www.xoops.org">Xoops.org</a>
+            <a class="item" href="http://www.frxoops.org">Xoops France</a>
             <hr />
-            <a class="item" href="http://xoops.foreach.fr"><img class="image" src="<{$theme_icons}>/foreach.png" alt="" />ForXoops</a>
-            <a class="item" href="http://www.xoops4noobs.fr"><img class="image" src="<{$theme_icons}>/xoops4noobs.png" alt="" />Xoops4Noobs</a>
+            <a class="item" href="http://xoops.foreach.fr">ForXoops</a>
+            <a class="item" href="http://www.xoops4noobs.fr">Xoops4Noobs</a>
           </div>
           <a class="item" href="<{$xoops_url}>/user.php?op=logout"><{$smarty.const._AD_TH_LOGOUT}></a>
         </div>
@@ -88,6 +88,9 @@
           <{if isset($systemmenu.links.11)}>
           <a class="item" href='<{$systemmenu.links.11.link}>'><{$systemmenu.links.11.title}></a>
           <{/if}>
+          <{if isset($systemmenu.links.0)}>
+          <a class="item" href='<{$systemmenu.links.0.link}>'><{$systemmenu.links.0.title}></a>
+          <{/if}>
           <{if isset($systemmenu.links.3)}>
           <a class="item" href='<{$systemmenu.links.3.link}>'><{$systemmenu.links.3.title}></a>
           <{/if}>
@@ -109,7 +112,7 @@
   </div>
 <script type="text/javascript">
   var menu1 = new AdMenu("menu1");
-  menu1.position.level1.top = 1;
+  menu1.position.level1.top = 3;
   menu1.position.level1.left = 0;
   menu1.position.levelX.top = 0;
   menu1.position.levelX.left = 0;
