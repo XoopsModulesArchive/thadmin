@@ -2,7 +2,7 @@
 /**
  * @copyright   The Xoops Project http://sourceforge.net/projects/xoops/
  * @license     http://www.gnu.org/licenses/gpl.txt GNU General Public License (GPL)
- * @package     thadmin
+ * @package     ThAdmin
  */
 
 // Main
@@ -35,16 +35,14 @@ $modversion['adminmenu']              = 'admin/menu.php';
 $modversion['hasMain']                = 0;
 // Templates
 $i=1;
-$modversion['templates'][$i]['file']       = 'thadmin_header.html';
+$modversion['templates'][$i]['file']       = 'xoadmin_header.html';
 $modversion['templates'][$i]['description']= '';
 $i++;
-$modversion['templates'][$i]['file']       = 'thadmin_footer.html';
+$modversion['templates'][$i]['file']       = 'xoadmin_footer.html';
 $modversion['templates'][$i]['description']= '';
 // Settings
 include_once XOOPS_ROOT_PATH.'/class/xoopslists.php';
 $theme_list = XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH.'/modules/thadmin/themes/');
-
-
 $i=1;
 $modversion['config'][$i]['name']       = 'theme_admin_set';
 $modversion['config'][$i]['title']      = '_MI_TH_ADMINTHEME';
