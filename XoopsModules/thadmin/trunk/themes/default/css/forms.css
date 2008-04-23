@@ -1,63 +1,96 @@
-/* forms */
-#xo-page fieldset {
-  margin:               0 0 1em 0;
-  padding:              1em;
-  border:               none;
+/*======= Style for forms, boutons, text, ... ========*/
+#xo-content form {
+margin:0;
+color: inherit;
+background:transparent;
 }
-#xo-page legend {
-  font-size:             1.1em;
-  font-weight:          bold;
+.xo-formButtons, .xo-formButton, button {
+padding:.25em;
+text-align:center;
 }
-#xo-page label {
-  display:             block;
-  float:               left;
-  font-weight:           bold;
+label {
+padding:0;
+color: inherit;
+background:transparent;
 }
-input {
-  font-size:             1em;
-  border:               1px solid #ccc;
+.xo-formfield {
+margin-bottom:.2em;
+color:inherit;
+background:transparent;
 }
-button, input[type="submit"], input[type="button"], input[type="reset"], .xo-formbuttons, .formButton {
-  background-image: url('../img/bgbutton.gif');
-  background-color: #e6e6e6;
-  padding: 1px 4px 1px 4px;
-  color: inherit;
-  border: 1px solid #bbb;
-  cursor: pointer;
-}
-a.xo-formbuttons {
-  padding: 4px 4px 0 4px;
-  font-weight: normal;
-}
-
-button:focus, input[type="submit"]:focus, input[type="button"]:focus, input[type="reset"]:focus, .xo-formbuttons:focus, .formButton:focus,
- button:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover, .xo-formbuttons:hover, .formButton:hover {
-  background-color: #639ace;
-  color: #666;
+#xo-content .xo-formfield.required label:after {
+content:'*';
+color:#ff0000;
+background-color:     #fff;
 }
 select {
-  background-color:        #f6f6f6;
-  color:               #000;
-  border:              1px solid #ccc;
-  font-size:             .9em;
+color:#333;
+background-color:#fff;
+font-size: .9em;
+border: 2px inset #f1f3f8 !important;
 }
-select:focus {
-  background-color:        #fff;
-  color:               #000;
-  border:              1px solid #999;
+select[name=timezone_offset] {
+font-size:.9em;
 }
-textarea {
-  width:               85%;
-  height:              110px;
-  margin:              0.5em 0.5em 0.5em 0;
-  background-color:        #eee;
-  padding:              5px;
-  color:               #000;
-  border:              1px solid #bbb;
-  overflow:             auto;
+input[type=submit], input[type=reset], input[type=button], .xo-formbuttons, .formButton, button {
+margin:3px 0 3px 0;
+background:#D3D2D6 url('../img/button_bg.png') repeat-x left bottom;
+color:#405A80;
+font-size:.9em;
+font-weight:bold;
+border:1px solid #ccc;
+cursor: pointer;
 }
-textarea:focus {
-  background-color:        #fff;
-  color:               #000;
-  border:              1px solid #999;
+input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover,.xo-formbuttons:hover, .formButton:hover, button:hover  {
+background:#E6EBFF url('../img/button-hover_bg.png') repeat-x left bottom;
+color: #333;
+cursor:pointer;
 }
+input[type=text], input[type=password], input[type=checkbox], input[type=file], textarea {
+border:1px solid #ddd;
+margin: 2px 5px 2px 0;
+padding-left:.2em;
+color:inherit;
+background-color:#fff;
+}
+input[type=text], input[type=password], input[type=file] {
+background:#fff url('../img/form-input.png') no-repeat left top;
+color: #333;
+}
+input[type=text]:hover, input[type=password]:hover, input[type=file]:hover {
+color:#333;
+}
+input[type=text]:focus, input[type=password]:focus, input[type=checkbox]:hover, input[type=file]:focus/*, textarea:hover*/ {
+background-color:#F4FAFF;
+color:#333;
+border-color:#139EE8;
+}
+input[type=radio] {
+    margin:                     0 5px 0 5px;
+}
+textarea { 
+    width:                      80%;
+    overflow:                   auto;
+    max-height:                 110px;
+    margin:                     0.5em 0.5em 0.5em 0;
+}
+label {font-weight: bold;}
+fieldset {
+padding: 1em;
+line-height: 1.8em;
+}
+fieldset a {
+color: #ff0000;
+background-color:     inherit;
+font-weight: bold;
+text-transform: uppercase;
+}
+fieldset a:hover {
+text-decoration: underline;
+}
+legend {
+font-size: 1.1em;
+font-weight: bold;
+}
+
+

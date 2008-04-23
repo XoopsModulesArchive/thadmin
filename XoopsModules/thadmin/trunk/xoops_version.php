@@ -33,13 +33,6 @@ $modversion['adminindex']             = 'admin/index.php';
 $modversion['adminmenu']              = 'admin/menu.php';
 // Menu
 $modversion['hasMain']                = 0;
-// Templates
-$i=1;
-$modversion['templates'][$i]['file']       = 'xoadmin_header.html';
-$modversion['templates'][$i]['description']= '';
-$i++;
-$modversion['templates'][$i]['file']       = 'xoadmin_footer.html';
-$modversion['templates'][$i]['description']= '';
 // Settings
 include_once XOOPS_ROOT_PATH.'/class/xoopslists.php';
 $theme_list = XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH.'/modules/thadmin/themes/');
@@ -51,4 +44,11 @@ $modversion['config'][$i]['formtype']   = 'select';
 $modversion['config'][$i]['valuetype']  = 'text';
 $modversion['config'][$i]['options']    = $theme_list;
 $modversion['config'][$i]['default']    = 'default';
+$i++;
+$modversion['config'][$i]['name']       = 'cpanel_only';
+$modversion['config'][$i]['title']      = '_MI_TH_CPANELEONLY';
+$modversion['config'][$i]['description']= '_MI_TH_CPANELEONLY_DESC';
+$modversion['config'][$i]['formtype']   = 'yesno';
+$modversion['config'][$i]['valuetype']  = 'int';
+$modversion['config'][$i]['default']    = 1;
 ?>
