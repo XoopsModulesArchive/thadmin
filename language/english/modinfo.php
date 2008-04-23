@@ -14,4 +14,6 @@ define('_MI_TH_HELP', 'Help');
 // Settings
 define('_MI_TH_ADMINTHEME', 'Default Theme');
 define('_MI_TH_ADMINTHEME_DESC', 'Choose the default theme for your admin area');
+define('_MI_TH_CPANELEONLY', 'Display Warning ?');
+define('_MI_TH_CPANELEONLY_DESC', 'Hide the warning messages on cpanel interface');
 ?>

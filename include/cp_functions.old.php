@@ -27,12 +27,18 @@ include_once XOOPS_ROOT_PATH.'/class/template.php';
 
 function xoops_thadmin_cp_header()
 {
-    global $xoopsOption, $xoopsConfig, $xoopsModule, $xoopsLogger, $xoopsUser;
-    ob_start();
+    global $xoopsConfig, $xoopsUser, $xoopsModule;
     if (!defined('_AD_TH_CPFUNCTION')) {
         define('_AD_TH_CPFUNCTION', 1);
     }
-
+    if (!headers_sent()) {
+        header('Content-Type:text/html; charset='._CHARSET);
+        header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+        header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+        header('Cache-Control: no-store, no-cache, must-revalidate');
+        header("Cache-Control: post-check=0, pre-check=0", false);
+        header("Pragma: no-cache");
+    }
     // Include system admin language
     if(file_exists(XOOPS_ROOT_PATH.'/modules/system/language/'.$xoopsConfig['language'].'/admin.php')){
         include_once XOOPS_ROOT_PATH.'/modules/system/language/'.$xoopsConfig['language'].'/admin.php';
@@ -47,43 +53,25 @@ function xoops_thadmin_cp_header()
     }
     // Include module fonction
     include_once XOOPS_ROOT_PATH.'/modules/thadmin/include/functions.php';
+    // Initialize Template
+    $admTpl =& new XoopsTpl();
+    // Assign header var
+    $admTpl->assign('xoops_sitename', $xoopsConfig['sitename']);
+    $admTpl->assign('xoops_pagetitle', _AD_TH_TITLE);
+    // Search theme
     $theme_name = thadmin_Setting('theme_admin_set');
     if ($theme_name == '' || !is_dir(XOOPS_ROOT_PATH.'/modules/thadmin/themes/'.$theme_name)) {
         $theme_name = 'default';
     }
-    
-    if ( !isset( $xoopsLogger ) ) {
-        $xoopsLogger =& $GLOBALS['xoopsLogger'];
-    }
-    $xoopsLogger->stopTime( 'Module init' );
-    $xoopsLogger->startTime( 'XOOPS output init' );
-
-    // include Smarty template engine and initialize it
-    require_once XOOPS_ROOT_PATH.'/modules/thadmin/class/template.php';
-    require_once XOOPS_ROOT_PATH.'/modules/thadmin/class/theme.php';
-    
-    if ( @$xoopsOption['template_main'] ) {
-      if ( false === strpos( $xoopsOption['template_main'], ':' ) ) {
-        $xoopsOption['template_main'] = 'db:' . $xoopsOption['template_main'];
-      }
-    }
-    $adminThemeFactory =& new xoAdminThemeFactory();
-    $adminThemeFactory->allowedThemes = $theme_name;
-    $adminThemeFactory->defaultTheme = $theme_name;
-
-    $xoTheme =& $adminThemeFactory->createInstance( array(
-      'contentTemplate' => @$xoopsOption['template_main'],));
-    $adminTpl =& $xoTheme->template;
-    
-    $xoTheme->path = XOOPS_ROOT_PATH.'/modules/thadmin/themes/'.$theme_name;
-    $xoTheme->url  = XOOPS_URL.'/modules/thadmin/themes/'.$theme_name;
-    $xoTheme->addScript( '/include/xoops.js', array( 'type' => 'text/javascript' ) );
-
-    
-
-    $xoopsLogger->stopTime( 'XOOPS output init' );
-    $xoopsLogger->startTime( 'Module display' );
-       
+    // Set global variables
+    $admTpl->assign(array(
+        'theme_path'  => XOOPS_ROOT_PATH.'/modules/thadmin/themes/'.$theme_name,
+        'theme_url'   => XOOPS_URL.'/modules/thadmin/themes/'.$theme_name,
+        'theme_img'   => XOOPS_URL.'/modules/thadmin/themes/'.$theme_name.'/img',
+        'theme_icons' => XOOPS_URL.'/modules/thadmin/themes/'.$theme_name.'/icons',
+        'theme_css'   => XOOPS_URL.'/modules/thadmin/themes/'.$theme_name.'/css',
+        'theme_js'    => XOOPS_URL.'/modules/thadmin/themes/'.$theme_name.'/js')
+        );
     // Initialize group permission handler
     $moduleperm_handler =& xoops_gethandler('groupperm');
     $admin_mids = $moduleperm_handler->getItemIds('module_admin', $xoopsUser->getGroups());
@@ -190,48 +178,43 @@ function xoops_thadmin_cp_header()
     }
     $last = explode("/", $_SERVER['REQUEST_URI']);
     if ( $last[count($last)-1] == 'admin.php' && $last[count($last)-3] != 'modules' ) {
-        $adminTpl->assign('cpanel_home', 1);
-        $adminTpl->assign('hide_warning', thadmin_Setting('cpanel_only'));
+        $admTpl->assign('is_home', 1);
     } else {
-        $adminTpl->assign('cpanel_home', 0);
+        $admTpl->assign('is_home', 0);
     }
     // Assign to template
-    $adminTpl->assign_by_ref('adminmenu', $admin_menu);
-    $adminTpl->assign_by_ref('systemmenu', $systemmenu);
+    $admTpl->assign_by_ref('adminmenu', $admin_menu);
+    $admTpl->assign_by_ref('systemmenu', $systemmenu);
     $adminmenucount = (count($system_rights) > 0) ? count($admin_menu) + 1 : count($admin_menu);
-    $adminTpl->assign('adminmenucount', $adminmenucount);
+    $admTpl->assign('adminmenucount', $adminmenucount);
     // Call header
-    //echo $admTpl->fetch(XOOPS_ROOT_PATH.'/modules/thadmin/templates/xoadmin_header.html');
+    echo $admTpl->fetch(XOOPS_ROOT_PATH.'/modules/thadmin/templates/xoadmin_header.html');
 }
 
 function xoops_thadmin_cp_footer()
 {
-    global $xoopsConfig, $xoopsLogger, $xoopsTpl;
+    global $xoopsConfig, $xoopsLogger, $admTpl;
+    // Initialize Template
+    $admTpl =& new XoopsTpl();
+    // Search theme
+    $theme_name = 'default';
+    // Set global variables
+    $admTpl->assign(array(
+        'theme_path'  => XOOPS_ROOT_PATH.'/modules/thadmin/themes/'.$theme_name,
+        'theme_url'   => XOOPS_URL.'/modules/thadmin/themes/'.$theme_name,
+        'theme_img'   => XOOPS_URL.'/modules/thadmin/themes/'.$theme_name.'/img',
+        'theme_icons' => XOOPS_URL.'/modules/thadmin/themes/'.$theme_name.'/icons',
+        'theme_css'   => XOOPS_URL.'/modules/thadmin/themes/'.$theme_name.'/css',
+        'theme_js'    => XOOPS_URL.'/modules/thadmin/themes/'.$theme_name.'/js')
+        );
+    $config_handler =& xoops_gethandler('config');
+    $xoopsMeta =& $config_handler->getConfigsByCat(XOOPS_CONF_METAFOOTER);
     
-    if ( !defined('XOOPS_FOOTER_INCLUDED') ) {
-        define('XOOPS_FOOTER_INCLUDED', 1);
-        $xoopsLogger->stopTime( 'Module display' );
-        
-        if (!headers_sent()) {
-            header('Content-Type:text/html; charset='._CHARSET);
-            header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-            header('Cache-Control: private, no-cache');
-            header('Pragma: no-cache');
-        }
-        //@internal: using global $xoTheme dereferences the variable in old versions, this does not
-        if ( !isset( $xoTheme ) )  $xoTheme =& $GLOBALS['xoTheme'];
-
-        if ( isset( $xoopsOption['template_main'] ) && $xoopsOption['template_main'] != $xoTheme->contentTemplate ) {
-            trigger_error( "xoopsOption[template_main] should be defined before including header.php", E_USER_WARNING );
-            if ( false === strpos( $xoopsOption['template_main'], ':' ) ) {
-                $xoTheme->contentTemplate = 'db:' . $xoopsOption['template_main'];
-            } else {
-                $xoTheme->contentTemplate = $xoopsOption['template_main'];
-            }
-        }
-        $xoTheme->render();
-        $xoopsLogger->stopTime();
-        ob_end_flush();
-    }
+    $admTpl->assign('xoops_footer', $xoopsMeta['footer']);
+    // Display logger
+    echo $GLOBALS['xoopsLogger']->render('');
+    // Call footer template
+    echo $admTpl->fetch(XOOPS_ROOT_PATH.'/modules/thadmin/templates/xoadmin_footer.html'); 
+    ob_end_flush();
 }
 ?>
