@@ -2,15 +2,18 @@
 /**
  * @copyright   The Xoops Project http://sourceforge.net/projects/xoops/
  * @license     http://www.gnu.org/licenses/gpl.txt GNU General Public License (GPL)
- * @package     thadmin
+ * @package     ThAdmin
+ * @version     1.0
  */
+
+
 
 /**
  * Returns a module's option
- * @author Instant Zero (http://xoops.instant-zero.com)
+ * @author    Instant Zero (http://xoops.instant-zero.com)
  * @copyright (c) Instant Zero
- * @param string $option	module option's name
- **/
+ * @param     string $option	module option's name
+ */
 function thadmin_Setting($option, $repmodule='thadmin'){
   global $xoopsModuleConfig, $xoopsModule;
   static $tbloptions= Array();

@@ -28,9 +28,6 @@ padding:15px 2px 5px 0;
 font-weight:bold;
 }
 /*  hypertext links  */
-a[rel~=alternate] {
-float:right;
-}
 a {
 outline:none;
 background-color:transparent; 
