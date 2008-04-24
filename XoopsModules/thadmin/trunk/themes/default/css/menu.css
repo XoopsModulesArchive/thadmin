@@ -1,12 +1,12 @@
 /* Nav bar start...*/
-#navbar {
+#xo-navbar {
 height:22px;
 background:#fff url('../img/navbg.gif') repeat-x top;
 padding:4px 0 1px 5px;
 cursor:default;
 border-bottom:1px solid #ccc;
 }
-#navbar table{border-spacing:0;}
+#xo-navbar table{border-spacing:0;}
 .NavMenu {
 font-family:Verdana, Tahoma, Georgia, sans-serif;
 font-size:.9em;

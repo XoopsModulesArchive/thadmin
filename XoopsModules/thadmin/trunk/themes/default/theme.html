@@ -8,11 +8,11 @@
   <!-- Theme name -->
 	<{assign var=theme_tpl value=$xoTheme->path|cat:'/xotpl'}>
 <!-- Title and meta -->
-  <{includeq file="$theme_tpl/xoadmin_metas.html"}>
+  <{includeq file="$theme_tpl/xometas.html"}>
 <!-- admin theme scripts -->
-  <{includeq file="$theme_tpl/xoadmin_scripts.html"}>
+  <{includeq file="$theme_tpl/xoscripts.html"}>
 <!-- Theme Sheet Css -->
-  <{includeq file="$theme_tpl/xoadmin_style.html"}>
+  <{includeq file="$theme_tpl/xostyle.html"}>
 <!-- module header -->
   <{$xoops_module_header}>
 </head>
@@ -25,11 +25,11 @@
       <{includeq file="$theme_tpl/xoheader.html"}>
     </div>
     <!-- Include menu -->
-    <{includeq file="$theme_tpl/xoadmin_menu.html"}>
+    <{includeq file="$theme_tpl/xomenu.html"}>
     <div id="xo-content">
       <!-- Here start the module admin content..... -->
       <{if $cpanel_home}>
-        <{includeq file="$theme_path/xotpl/xoadmin_home.html"}>
+        <{includeq file="$theme_path/xotpl/xocpanel.html"}>
         <{if !$hide_warning}><{$xoops_contents}><{/if}>
       <{else}>
       <{if $xoops_contents}><{$xoops_contents}><{/if}>
