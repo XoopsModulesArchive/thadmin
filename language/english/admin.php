@@ -27,4 +27,10 @@ define('_AD_TH_BLOCKS_DESC', 'Manage all settings of your blocks');
 define('_AD_TH_USERS_DESC', 'Manage all users settings');
 define('_AD_TH_MISCS_DESC', 'Manage all tools settings');
 define('_AD_TH_FILE', 'File "include/cp_functions.php" :');
+
+// Index
+define('_AD_TH_NAME', 'Name:');
+define('_AD_TH_AUTHOR', 'Author:');
+define('_AD_TH_VERSION', 'Version:');
+define('_AD_TH_ACTIVE', 'Active:');
 ?>

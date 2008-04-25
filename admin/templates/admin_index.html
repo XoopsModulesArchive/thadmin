@@ -1,4 +1,14 @@
 <div class="bold">Module status</div>
-<ul>
-  <li><{$smarty.const._AD_TH_FILE}>&nbsp;<{if $hack_set}><img src="../images/icons/yes.png" alt="" /><{else}><img src="../images/icons/no.png" alt="" /><{/if}></li>
-</ul>
+<{foreach item=row from=$themes}>
+<div class="spacer">
+  <img class="floatleft" src="<{$row.url}>/<{$row.image}>" alt="<{$row.name}>" title="<{$row.name}>" />
+  <div class="spacer">&nbsp;</div>
+  <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_NAME}></span>&nbsp;<{$row.name}></div>
+  <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_VERSION}></span>&nbsp;<{$row.version}></div>
+  <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_AUTHOR}></span>&nbsp;<{$row.author}></div>
+  <{if $row.default}>
+  <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_ACTIVE}></span>&nbsp;<img src="../images/icons/yes.png" alt="" /></div>
+  <{/if}>
+</div>
+<{/foreach}>
+<div class="clear"></div>
