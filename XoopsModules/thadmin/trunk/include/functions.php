@@ -6,7 +6,9 @@
  * @version     1.0
  */
 
-
+function thadmin_getTheme(){
+  
+}
 
 /**
  * Returns a module's option
