@@ -36,8 +36,10 @@ function xoops_thadmin_cp_header()
     // Include system admin language
     if(file_exists(XOOPS_ROOT_PATH.'/modules/system/language/'.$xoopsConfig['language'].'/admin.php')){
         include_once XOOPS_ROOT_PATH.'/modules/system/language/'.$xoopsConfig['language'].'/admin.php';
+        include_once XOOPS_ROOT_PATH.'/modules/system/language/'.$xoopsConfig['language'].'/cpanel.php';
     } else {
         include_once XOOPS_ROOT_PATH.'/modules/system/language/english/admin.php';
+        include_once XOOPS_ROOT_PATH.'/modules/system/language/english/cpanel.php';
     }
     // Include module admin language
     if (file_exists(XOOPS_ROOT_PATH.'/modules/thadmin/language/'.$xoopsConfig['language'].'/admin.php')) {
@@ -191,7 +193,7 @@ function xoops_thadmin_cp_header()
     $last = explode("/", $_SERVER['REQUEST_URI']);
     if ( $last[count($last)-1] == 'admin.php' && $last[count($last)-3] != 'modules' ) {
         $adminTpl->assign('cpanel_home', 1);
-        $adminTpl->assign('hide_warning', thadmin_Setting('cpanel_only'));
+        $adminTpl->assign('view_warning', thadmin_Setting('cpanel_only'));
     } else {
         $adminTpl->assign('cpanel_home', 0);
     }
