@@ -165,11 +165,11 @@ table th, table.outer th,
 #xo-page table.outer th.head,
 #xo-page table.xodata-list thead th,
 #xo-page table.xo-formfields thead th {
-background:#4AA3F6 url('../img/table-caption3.png') repeat-x left top;
+background:#2972c4 url('../img/table-caption3.png') repeat-x left top;
 padding:2px .25em;
 color:#fff;
 font-weight:bold;
-border:1px solid #65ACEE;
+border:1px solid #19409e;
 }
 table.outer th a,
 #xo-page table.xodata-list thead th a,

@@ -30,13 +30,13 @@ $theme_default = thadmin_Setting('theme_admin_set');
 XoopsLoad::load('xoopslists');
 $theme_list = XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH.'/modules/thadmin/themes/');
 foreach($theme_list as $theme) {
-  if(file_exists(XOOPS_ROOT_PATH.'/modules/thadmin/themes/'.$theme.'/xo-info.php')) {
-    include_once XOOPS_ROOT_PATH.'/modules/thadmin/themes/'.$theme.'/xo-info.php';
-    $theme_array[$i] = $thmversion;
-    $theme_array[$i]['path'] = XOOPS_ROOT_PATH.'/modules/thadmin/themes/'.$theme;
-    $theme_array[$i]['url'] = XOOPS_URL.'/modules/thadmin/themes/'.$theme;
-    $theme_array[$i]['default'] = ($theme_default == $theme) ? 1 : 0;
-  }
+    if(file_exists(XOOPS_ROOT_PATH.'/modules/thadmin/themes/'.$theme.'/xo-info.php')) {
+        include_once XOOPS_ROOT_PATH.'/modules/thadmin/themes/'.$theme.'/xo-info.php';
+        $theme_array[$i] = $thmversion;
+        $theme_array[$i]['path'] = XOOPS_ROOT_PATH.'/modules/thadmin/themes/'.$theme;
+        $theme_array[$i]['url'] = XOOPS_URL.'/modules/thadmin/themes/'.$theme;
+        $theme_array[$i]['default'] = ($theme_default == $theme) ? 1 : 0;
+    }
 }
 $tpl->assign('themes', $theme_array);
 /*
