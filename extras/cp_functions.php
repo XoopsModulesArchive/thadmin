@@ -18,7 +18,7 @@
  * @since       2.3.0
  * @author      Andricq Nicolas (AKA MusS)
  * @author      Taiwen Jiang <phppp@users.sourceforge.net>
- * @version     $Id: xoopslocal.php 1267 2008-01-26 02:34:24Z phppp $
+ * @version     $Id$
  */
 
 define('XOOPS_THADMIN_CPFUNC_LOADED', 1);

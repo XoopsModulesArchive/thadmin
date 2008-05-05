@@ -17,7 +17,7 @@
  * @author      Andricq Nicolas (AKA MusS)
  * @since       2.3.0
  * @package     ThAdmin
- * @version     $Id: theme.php 1416 2008-03-30 04:20:47Z phppp $
+ * @version     $Id$
  */
 if (!defined('XOOPS_ROOT_PATH')) { exit(); }
 

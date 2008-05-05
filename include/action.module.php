@@ -16,7 +16,7 @@
  * @license         http://www.fsf.org/copyleft/gpl.html GNU public license
  * @since           2.3.0
  * @author          Taiwen Jiang <phppp@users.sourceforge.net>
- * @version         $Id: action.module.php 1574 2008-05-04 15:33:46Z phppp $
+ * @version         $Id$
  * @package         ThAdmin
  */
 
