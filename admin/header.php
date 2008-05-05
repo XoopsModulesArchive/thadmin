@@ -1,37 +1,28 @@
 <?php
+/*
+ You may not change or alter any portion of this comment or credits
+ of supporting developers from this source code or any supporting source code 
+ which is considered copyrighted (c) material of the original comment or credit authors.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*/
+
 /**
- * @copyright   The Xoops Project http://sourceforge.net/projects/xoops/
- * @license     http://www.gnu.org/licenses/gpl.txt GNU General Public License (GPL)
- * @package     thadmin
+ * XOOPS ThAdmin module
+ *
+ * @copyright   The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @license     http://www.fsf.org/copyleft/gpl.html GNU public license
+ * @author      Andricq Nicolas (AKA MusS)
+ * @since       2.3.0
+ * @package     ThAdmin
+ * @version     $Id: theme.php 1416 2008-03-30 04:20:47Z phppp $
  */
 
-include_once '../../../mainfile.php';
-// Xoops class
-include_once XOOPS_ROOT_PATH.'/class/template.php';
-include_once XOOPS_ROOT_PATH.'/class/xoopsmodule.php';
-include_once XOOPS_ROOT_PATH.'/class/xoopsformloader.php';
-// Xoops admin functions
-include_once XOOPS_ROOT_PATH.'/include/cp_functions.php';
-
-// Check user right
-if ( $xoopsUser ) {
-	$xoopsModule = XoopsModule::getByDirname('thadmin');
-	if ( !$xoopsUser->isAdmin($xoopsModule->mid()) ) { 
-		redirect_header(XOOPS_URL."/", 3, _NOPERM);
-		exit();
-	}
-} else {
-	redirect_header(XOOPS_URL."/", 3, _NOPERM);
-	exit();
-}
-// Include language file
-if ( file_exists("../language/".$xoopsConfig['language']."/admin.php") ) {
-	include_once("../language/".$xoopsConfig['language']."/admin.php");
-} else {
-	include_once("../language/english/admin.php");
-}
+include_once '../../../include/cp_header.php';
 // Include class & functions
-include_once XOOPS_ROOT_PATH."/modules/".$xoopsModule->dirname()."/class/tabs.php";
+include_once XOOPS_ROOT_PATH . "/modules/" . $xoopsModule->getVar("dirname", "n") . "/class/tabs.php";
 
-$myts = &MyTextSanitizer::getInstance();
+$myts =& MyTextSanitizer::getInstance();
 ?>
