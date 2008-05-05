@@ -6,13 +6,17 @@
  */
 
 // General
-define('_AD_TH_PREFERENCES','Preferences');
-define('_AD_TH_UPDATE','Update');
+define('_AD_TH_PREFERENCES', 'Preferences');
+define('_AD_TH_UPDATE', 'Update');
 define('_AD_TH_TITLE', 'Administration'); 
 define('_AD_TH_NAVIGATION', 'Navigation');
-define('_AD_TH_ADMINHOME', 'Control Panel');
-define('_AD_TH_SITEHOME', 'Website');
-define('_AD_TH_LINKS', 'Links');
+define('_AD_TH_ADMINHOME', 'Control Panel Homepage');
+define('_AD_TH_SITEHOME', 'Website Homepage');
+define('_AD_TH_LINKS', 'Userful Links');
+define('_AD_TH_LINKS_XOOPSPROJECT', 'XOOPS Project');
+define('_AD_TH_LINKS_XOOPSCOMMUNITY', 'XOOPS Community');
+define('_AD_TH_LINKS_LOCAL', 'Local Support');
+define('_AD_TH_LINKS_FORXOOPS', 'ForXoops');
 define('_AD_TH_LOGOUT', 'Logout');
 define('_AD_TH_MODULES', 'Modules');
 define('_AD_TH_MODULEADMIN' , 'Administration');
