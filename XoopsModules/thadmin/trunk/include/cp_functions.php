@@ -18,7 +18,7 @@
  * @since       2.3.0
  * @author      Andricq Nicolas (AKA MusS)
  * @author      Taiwen Jiang <phppp@users.sourceforge.net>
- * @version     $Id: cp_functions.php 1459 2008-04-18 10:26:53Z phppp $
+ * @version     $Id$
  */
 
 include_once XOOPS_ROOT_PATH.'/class/template.php';
