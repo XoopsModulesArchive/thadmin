@@ -155,8 +155,7 @@ function xoops_thadmin_cp_header()
                 );
         }
     }
-    $last = explode("/", $_SERVER['REQUEST_URI']);
-    if ( $last[count($last)-1] == 'admin.php' && $last[count($last)-3] != 'modules' ) {
+    if ( !is_object($xoopsModule) && substr($_SERVER['REQUEST_URI'], -10) == "/admin.php" ) {
         $adminTpl->assign('cpanel_home', 1);
         $adminTpl->assign('view_warning', thadmin_Setting('cpanel_only'));
     } else {
