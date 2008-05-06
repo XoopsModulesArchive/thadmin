@@ -22,7 +22,9 @@
 
 include_once '../../../include/cp_header.php';
 // Include class & functions
+include_once XOOPS_ROOT_PATH . '/class/template.php';
 include_once XOOPS_ROOT_PATH . "/modules/" . $xoopsModule->getVar("dirname", "n") . "/class/tabs.php";
+include_once XOOPS_ROOT_PATH . "/modules/" . $xoopsModule->getVar("dirname", "n") . "/include/functions.php";
 
 $myts =& MyTextSanitizer::getInstance();
 ?>
