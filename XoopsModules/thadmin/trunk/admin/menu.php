@@ -20,7 +20,7 @@
  * @version     $Id$
  */
 
-$i=0; 
+$i = 0; 
 $i++;
 $adminmenu[$i]['title']  = _MI_TH_HOME;
 $adminmenu[$i]['name']   = 'home';

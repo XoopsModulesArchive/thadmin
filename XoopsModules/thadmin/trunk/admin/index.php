@@ -34,9 +34,9 @@ $mainTabs->display();
 $tpl =& new XoopsTpl();
 // Search if hacked file is uploaded
 if (defined('_AD_TH_CPFUNCTION')) {
-  $tpl->assign('hack_set', 1);
+    $tpl->assign('hack_set', 1);
 } else {
-  $tpl->assign('hack_set', 0);
+    $tpl->assign('hack_set', 0);
 }
 
 $theme_default = thadmin_Setting('theme_admin_set');
