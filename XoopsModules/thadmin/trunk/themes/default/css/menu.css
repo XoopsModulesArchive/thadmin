@@ -78,4 +78,7 @@ background-color:#ccc;
 }
 .NavMenu .section .item {margin-bottom:0;}
 * html .NavMenu td{position:relative;}
-#search{width:100%;}
+#search{
+padding-right:5px;
+width:100%;
+}

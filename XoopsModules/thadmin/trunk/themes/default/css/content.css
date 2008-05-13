@@ -27,6 +27,7 @@ h4 {
 padding:15px 2px 5px 0;
 font-weight:bold;
 }
+hr { height:1px;width:100%;text-align:center;border:1px #ccc solid;}
 /*  hypertext links  */
 a {
 outline:none;

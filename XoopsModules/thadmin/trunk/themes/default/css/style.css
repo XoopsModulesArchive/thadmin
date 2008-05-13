@@ -80,6 +80,7 @@ text-decoration:underline;
 font-size:.8em;
 }
 /* Index */
+.xo-system-infos,
 .xo-cpanel-settings,
 .xo-cpanel-modules,
 .xo-cpanel-blocks,
@@ -89,8 +90,10 @@ padding:.8em;
 width:600px;
 border:1px solid #ccc;
 margin: 10px auto;
+z-index:100;
 }
-.xo-cpanel-settings {background-color:#F2F9FF;}
+.xo-system-infos{background-color:#F2F9FF;}
+.xo-cpanel-settings{background-color:#F2F9FF;}
 .xo-cpanel-modules{background-color:#F1FFE8;}
 .xo-cpanel-blocks{background-color:#FFFFE8;}
 .xo-cpanel-users{background-color:#FFF5E8;}
