@@ -80,7 +80,11 @@ text-decoration:underline;
 font-size:.8em;
 }
 /* Index */
-.xo-system-infos,
+#xo-infos{
+  padding:.8em; 
+  margin:0;
+}
+.xo-panel-infos,
 .xo-cpanel-settings,
 .xo-cpanel-modules,
 .xo-cpanel-blocks,
@@ -92,14 +96,14 @@ border:1px solid #ccc;
 margin: 10px auto;
 z-index:100;
 }
-.xo-system-infos{background-color:#F2F9FF;}
+.xo-panel-infos{background-color:#F2F9FF;}
 .xo-cpanel-settings{background-color:#F2F9FF;}
 .xo-cpanel-modules{background-color:#F1FFE8;}
 .xo-cpanel-blocks{background-color:#FFFFE8;}
 .xo-cpanel-users{background-color:#FFF5E8;}
 .xo-cpanel-themes{background-color:#FFE8FF;}
 .xo-cpanel-tools{background-color:#f6f6f6;}
-
+.xo-panel-infos .image,
 .xo-cpanel-settings .image,
 .xo-cpanel-modules .image, 
 .xo-cpanel-blocks .image, 
