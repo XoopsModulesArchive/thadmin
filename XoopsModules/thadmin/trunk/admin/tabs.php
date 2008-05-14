@@ -28,9 +28,9 @@ $module_id = $xoopsModule->getVar('mid');
 $module_name = $xoopsModule->getVar('name');
 /* Construct the link for acces to preference and update page */
 $top_navigation = 
-    "<a href='" . XOOPS_URL . "/modules/system/admin.php?fct=preferences&op=showmod&mod={$module_id}'>" . _AD_TH_PREFERENCES . "</a>" .
+    "<a href='" . XOOPS_URL . "/modules/system/admin.php?fct=preferences&amp;op=showmod&amp;mod={$module_id}'>" . _AD_TH_PREFERENCES . "</a>" .
     "<a name='separator'> | </a>" .
-    "<a href='" . XOOPS_URL . "/modules/system/admin.php?fct=modulesadmin&op=update&module=" . $xoopsModule->getVar('dirname', 'n') . "'>" . _AD_TH_UPDATE . "</a>";
+    "<a href='" . XOOPS_URL . "/modules/system/admin.php?fct=modulesadmin&amp;op=update&amp;module=" . $xoopsModule->getVar('dirname', 'n') . "'>" . _AD_TH_UPDATE . "</a>";
 /* Create the tab navigation */
 $mainTabs = new XoopsThadminTabs();
 $mainTabs->setModuleName($module_name);

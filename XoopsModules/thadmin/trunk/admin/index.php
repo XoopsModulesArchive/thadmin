@@ -24,7 +24,6 @@
 require_once 'header.php';
 // Include tabs
 require_once 'tabs.php';
-
 // Display Admin header
 xoops_cp_header();
 // Display navigation tabs
@@ -39,16 +38,31 @@ if (defined('_AD_TH_CPFUNCTION')) {
     $tpl->assign('hack_set', 0);
 }
 
+/*
+XoopsLoad::load('file');
+$folder_handler = XoopsFile::getHandler('folder', XOOPS_ROOT_PATH.'/modules/thadmin/themes/default');
+$folder_handler->copy(
+  array(
+    'to' => XOOPS_ROOT_PATH.'/modules/thadmin/themes/test', 
+    'from' => XOOPS_ROOT_PATH.'/modules/thadmin/themes/default',
+    'mode' => 755,
+    'skip'=> array()));
+foreach( $folder_handler->messages() as $msg){
+echo $msg;
+}
+*/
+// Get the folder list theme
 $theme_default = thadmin_Setting('theme_admin_set');
 XoopsLoad::load('xoopslists');
-$theme_list = XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH.'/modules/thadmin/themes/');
+$theme_list = XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH.'/modules/' . $xoopsModule->getVar('dirname', 'n') . '/themes/');
 foreach ($theme_list as $theme) {
     if (file_exists(XOOPS_ROOT_PATH.'/modules/thadmin/themes/' . $theme . '/xo-info.php')) {
         include_once XOOPS_ROOT_PATH.'/modules/thadmin/themes/' . $theme . '/xo-info.php';
         $theme_array[$i] = $thmversion;
-        $theme_array[$i]['path'] = XOOPS_ROOT_PATH.'/modules/thadmin/themes/' . $theme;
-        $theme_array[$i]['url'] = XOOPS_URL.'/modules/thadmin/themes/' . $theme;
+        $theme_array[$i]['path']    = XOOPS_ROOT_PATH.'/modules/thadmin/themes/' . $theme;
+        $theme_array[$i]['url']     = XOOPS_URL.'/modules/thadmin/themes/' . $theme;
         $theme_array[$i]['default'] = ($theme_default == $theme) ? 1 : 0;
+        $i++;
     }
 }
 $tpl->assign('themes', $theme_array);

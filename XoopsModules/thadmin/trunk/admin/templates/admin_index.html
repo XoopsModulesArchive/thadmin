@@ -1,14 +1,21 @@
 <div class="bold">Module status</div>
-<{foreach item=row from=$themes}>
-<div class="spacer">
-  <img class="floatleft" src="<{$row.url}>/<{$row.image}>" alt="<{$row.name}>" title="<{$row.name}>" />
-  <div class="spacer">&nbsp;</div>
-  <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_NAME}></span>&nbsp;<{$row.name}></div>
-  <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_VERSION}></span>&nbsp;<{$row.version}></div>
-  <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_AUTHOR}></span>&nbsp;<{$row.author}></div>
-  <{if $row.default}>
-  <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_ACTIVE}></span>&nbsp;<img src="../images/icons/yes.png" alt="" /></div>
-  <{/if}>
-</div>
-<{/foreach}>
+<table>
+  <tbody>
+  <{foreach item=row from=$themes}>
+    <tr>
+      <td>
+        <img src="<{$row.url}>/<{$row.image}>" alt="<{$row.name}>" title="<{$row.name}>" />
+      </td>
+      <td>
+        <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_NAME}></span>&nbsp;<{$row.name}></div>
+        <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_VERSION}></span>&nbsp;<{$row.version}></div>
+        <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_AUTHOR}></span>&nbsp;<{$row.author}></div>
+        <{if $row.default}>
+        <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_ACTIVE}></span>&nbsp;<img src="../images/icons/yes.png" alt="" /></div>
+        <{/if}>
+      </td>
+    </tr>
+  <{/foreach}>
+  </tbody>
+</table>
 <div class="clear"></div>

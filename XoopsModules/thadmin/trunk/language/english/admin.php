@@ -2,7 +2,8 @@
 /**
  * @copyright   The Xoops Project http://sourceforge.net/projects/xoops/
  * @license     http://www.gnu.org/licenses/gpl.txt GNU General Public License (GPL)
- * @package     thadmin
+ * @package     ThAdmin
+ * @subpackage  language
  */
 
 // General
@@ -25,6 +26,9 @@ define('_AD_TH_BLOCKADMIN', 'Administration');
 define('_AD_TH_USERS', 'Users');
 define('_AD_TH_MISCS', 'Tools');
 
+// CPanel Description
+define('_MD_CPANEL_OVERVIEW_DESC', 'See your system configuration');
+define('_MD_CPANEL_PHPEXTENSIONS_DESC', 'See the loaded php extension');
 define('_MD_AM_PREF_DESC', 'Define all settings for your site and all installed module');
 define('_AD_TH_MODULES_DESC', 'Manage all module installed');
 define('_AD_TH_BLOCKS_DESC', 'Manage all settings of your blocks');

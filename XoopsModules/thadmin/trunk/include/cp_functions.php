@@ -162,52 +162,16 @@ function xoops_thadmin_cp_header()
         $adminTpl->assign('cpanel_home', 0);
     }
     // Information Array
-    $infos[1]['label'] = sprintf(_MD_CPANEL_VERSION, "XOOPS");
-    $infos[1]['value'] = XOOPS_VERSION;
-    $infos[2]['label'] = sprintf(_MD_CPANEL_VERSION, "PHP");
-    $infos[2]['value'] = PHP_VERSION;
-    $infos[3]['label'] = sprintf(_MD_CPANEL_VERSION, "MySQL");
-    $infos[3]['value'] = mysql_get_server_info();
-    $infos[4]['label'] = sprintf(_MD_CPANEL_VERSION, "Server API");
-    $infos[4]['value'] = PHP_SAPI;
-    $infos[5]['label'] = sprintf(_MD_CPANEL_VERSION, "OS");
-    $infos[5]['value'] = PHP_OS;
-    $infos[6]['label'] = 'safe_mode';
-    $infos[6]['value'] = ini_get( 'safe_mode' );
-    $infos[7]['label'] = 'register_globals';
-    $infos[7]['value'] = ini_get( 'register_globals' );
-    $infos[8]['label'] = 'magic_quotes_gpc';
-    $infos[8]['value'] = ini_get( 'magic_quotes_gpc' );
-    $infos[9]['label'] = 'allow_url_fopen';
-    $infos[9]['value'] = ini_get( 'allow_url_fopen' );
-    $infos[10]['label'] = 'fsockopen';
-    $infos[10]['value'] = function_exists( 'fsockopen' );
-    $infos[11]['label'] = 'allow_call_time_pass_reference';
-    $infos[11]['value'] = ini_get( 'allow_call_time_pass_reference' );
-    $infos[12]['label'] = 'post_max_size';
-    $infos[12]['value'] = ini_get( 'post_max_size' );
-    $infos[13]['label'] = 'max_input_time';
-    $infos[13]['value'] = ini_get( 'max_input_time' );
-    $infos[14]['label'] = 'output_buffering';
-    $infos[14]['value'] = ini_get( 'output_buffering' );
-    $infos[15]['label'] = 'max_execution_time';
-    $infos[15]['value'] = ini_get( 'max_execution_time' );
-    $infos[16]['label'] = 'memory_limit';
-    $infos[16]['value'] = ini_get( 'memory_limit' );
-    $infos[17]['label'] = 'file_uploads';
-    $infos[17]['value'] = ini_get( 'file_uploads' );
-    $infos[18]['label'] = 'upload_max_filesize';
-    $infos[18]['value'] = ini_get( 'upload_max_filesize' );
-   
-    
+    $infos = thadmin_systemInfos();
+    // PHP Extensions
+    $extensions = thadmin_phpExtension();
     // Assign to template
     $adminTpl->assign_by_ref('adminmenu', $admin_menu);
     $adminTpl->assign_by_ref('systemmenu', $systemmenu);
     $adminTpl->assign_by_ref('sysinfos', $infos);
+    $adminTpl->assign_by_ref('phpextension', $extensions);
     $adminmenucount = (count($system_rights) > 0) ? count($admin_menu) + 1 : count($admin_menu);
     $adminTpl->assign('adminmenucount', $adminmenucount);
-    // Call header
-    //echo $adminTpl->fetch(XOOPS_ROOT_PATH.'/modules/thadmin/templates/xoadmin_header.html');
 }
 
 function xoops_thadmin_cp_footer()
