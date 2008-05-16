@@ -12,7 +12,7 @@
 	color:#882200;
 	border-left:5px solid #F8B643;
 	border-bottom:1px solid #F8B643;
-	background:#ffffff url("../images/icons/idea.png") no-repeat 8px 3px;
+	background:url("../images/icons/idea.png") no-repeat 8px 3px;
 }
 .help h5 {
 	font-size:14px;

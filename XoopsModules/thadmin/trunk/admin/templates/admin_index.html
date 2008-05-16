@@ -1,21 +1,20 @@
-<div class="bold">Module status</div>
-<table>
+<div class="width50">
+<table class="outer">
   <tbody>
   <{foreach item=row from=$themes}>
     <tr>
-      <td>
+      <td class="even width20">
         <img src="<{$row.url}>/<{$row.image}>" alt="<{$row.name}>" title="<{$row.name}>" />
       </td>
-      <td>
+      <td class="odd">
         <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_NAME}></span>&nbsp;<{$row.name}></div>
         <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_VERSION}></span>&nbsp;<{$row.version}></div>
         <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_AUTHOR}></span>&nbsp;<{$row.author}></div>
-        <{if $row.default}>
-        <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_ACTIVE}></span>&nbsp;<img src="../images/icons/yes.png" alt="" /></div>
-        <{/if}>
+        <div class="spacer"><span class="bold"><{$smarty.const._AD_TH_ACTIVE}></span>&nbsp;<{if $row.default}><img src="../images/icons/yes.png" alt="Yes" /><{else}><img src="../images/icons/no.png" alt="No" /><{/if}></div>
       </td>
     </tr>
   <{/foreach}>
   </tbody>
 </table>
+</div>
 <div class="clear"></div>

@@ -7,77 +7,77 @@ html{
 padding:0;
 }
 body{
-margin:0;
-padding:0;
-background-color:#f1f1f1;
-color:#999;
-font-family:"Lucida Grande", Verdana, sans-serif;
-font-size:10pt;
+  margin:0;
+  padding:0;
+  background-color:#fff;
+  color:#999;
+  font-family:"Lucida Grande", Verdana, sans-serif;
+  font-size:10pt;
 }
 /* Body wrapper */
 #xo-wrapper {}
 #xo-bgstatic {}
 #xo-canvas {
-margin:0;
-background-color:#fff;
-color:#000;
-border-bottom:1px solid #ccc;
+  margin:0;
+  background-color:#fff;
+  color:#000;
+  border-bottom:1px solid #ccc;
 }
 /* Content Zone */
 #xo-page {
-padding-top:10px;
+  padding-top:10px;
 }
 #xo-content {
-clear:both;
-margin:0;
-background-color:#f9f9f9;
-padding:.5em;
-color:#333;
+  clear:both;
+  margin:0;
+  background-color:#f9f9f9;
+  padding:.5em;
+  color:#333;
 }
 #xo-content table td {
-vertical-align:top;
+  vertical-align:top;
 }
 /* Header */
 #xo-header{
-height:70px;
-padding:5px;
-background: url('../img/xo-banner_bg.png') repeat-x;;
+  height:70px;
+  padding:5px;
+  background: url('../img/xo-banner_bg.png') repeat-x;;
 }
 #xo-header span{
 color:#f1f1f1;
 }
 /* Banner  */
 #xo-banner-ad {
-margin:0 auto;
-width:480px;
-height:72px;
-background:url(../img/bg-ad-top.png) no-repeat;
-padding:1px;
+  margin:0 auto;
+  width:480px;
+  height:72px;
+  background:url(../img/bg-ad-top.png) no-repeat;
+  padding:1px;
 }
 #xo-banner-ad object, #xo-banner-ad img {
-display:block;
+  display:block;
 }
 /* Footer */
 #xo-footer {
-margin:0;
-background-color:#f9f9f9;
-padding:.5em;
-color:#666;
-font-size:.9em;
-text-align:center;
+  margin:0;
+  background-color:#f9f9f9;
+  padding:.5em;
+  color:#666;
+  font-size:.9em;
+  text-align:center;
 }
 #xo-footer a {
-background-color:inherit;
-color:#333;
+  background-color:inherit;
+  color:#333;
 }
 #xo-footer a:hover {
-background-color:inherit;
-color:#000;
-text-decoration:underline;
+  background-color:inherit;
+  color:#000;
+  text-decoration:underline;
 }
 /* debug messages */
 #xo-logger-output {
-font-size:.8em;
+  font-size:.8em;
 }
 /* Index */
 #xo-infos{
@@ -90,11 +90,11 @@ font-size:.8em;
 .xo-cpanel-blocks,
 .xo-cpanel-users,
 .xo-cpanel-tools {
-padding:.8em;
-width:600px;
-border:1px solid #ccc;
-margin: 10px auto;
-z-index:100;
+  padding:.8em;
+  width:600px;
+  border:1px solid #ccc;
+  margin: 10px auto;
+  z-index:100;
 }
 .xo-panel-infos{background-color:#F2F9FF;}
 .xo-cpanel-settings{background-color:#F2F9FF;}
@@ -109,14 +109,14 @@ z-index:100;
 .xo-cpanel-blocks .image, 
 .xo-cpanel-users .image,
 .xo-cpanel-tools .image {
-width:40px;
-vertical-align:middle;
+  width:40px;
+  vertical-align:middle;
 }
 /* Tips */
 .tips{
-color:#000;
-border:1px solid #00cc00;
-padding:8px 8px 8px 35px;
-margin:15px 10px;
-background:#f8fff8 url("../icons/idea.png") no-repeat 5px 4px;
+  color:#000;
+  border:1px solid #00cc00;
+  padding:8px 8px 8px 35px;
+  margin:15px 10px;
+  background:#f8fff8 url("../icons/idea.png") no-repeat 5px 4px;
 }

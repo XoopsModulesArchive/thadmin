@@ -37,20 +37,6 @@ if (defined('_AD_TH_CPFUNCTION')) {
 } else {
     $tpl->assign('hack_set', 0);
 }
-
-/*
-XoopsLoad::load('file');
-$folder_handler = XoopsFile::getHandler('folder', XOOPS_ROOT_PATH.'/modules/thadmin/themes/default');
-$folder_handler->copy(
-  array(
-    'to' => XOOPS_ROOT_PATH.'/modules/thadmin/themes/test', 
-    'from' => XOOPS_ROOT_PATH.'/modules/thadmin/themes/default',
-    'mode' => 755,
-    'skip'=> array()));
-foreach( $folder_handler->messages() as $msg){
-echo $msg;
-}
-*/
 // Get the folder list theme
 $theme_default = thadmin_Setting('theme_admin_set');
 XoopsLoad::load('xoopslists');

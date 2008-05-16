@@ -21,11 +21,11 @@
  * @version     $Id:
  */
 
-$thmversion['name']                   ='Default';
-$thmversion['version']                = 1.1;
-$thmversion['author']                 = 'MusS';
-$thmversion['help']                   = '';
-$thmversion['license']                = 'http://www.gnu.org/licenses/gpl.txt';
-$thmversion['image']                  = 'screenshot.gif';
-$thmversion['dirname']                = 'default';
+$thmversion['name']     ='Default';
+$thmversion['version']  = 1.1;
+$thmversion['author']   = 'MusS';
+$thmversion['help']     = '';
+$thmversion['license']  = 'http://www.gnu.org/licenses/gpl.txt';
+$thmversion['image']    = 'screenshot.gif';
+$thmversion['dirname']  = 'default';
 ?>
