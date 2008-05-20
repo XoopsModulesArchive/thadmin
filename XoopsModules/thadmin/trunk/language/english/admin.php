@@ -34,11 +34,17 @@ define('_AD_TH_MODULES_DESC', 'Manage all module installed');
 define('_AD_TH_BLOCKS_DESC', 'Manage all settings of your blocks');
 define('_AD_TH_USERS_DESC', 'Manage all users settings');
 define('_AD_TH_MISCS_DESC', 'Manage all tools settings');
-define('_AD_TH_FILE', 'File "include/cp_functions.php" :');
-
 // Index
-define('_AD_TH_NAME', 'Name:');
-define('_AD_TH_AUTHOR', 'Author:');
-define('_AD_TH_VERSION', 'Version:');
-define('_AD_TH_ACTIVE', 'Active:');
+define('_THADMIN_NAME', 'Name:');
+define('_THADMIN_AUTHOR', 'Author:');
+define('_THADMIN_VERSION', 'Version:');
+define('_THADMIN_ACTIVE', 'Active:');
+// Upload form
+define('_THADMIN_UPLOAD', 'Upload new module');
+define('_THADMIN_UPLOAD_FILE', 'Select theme file');
+define('_THADMIN_UPLOAD_DIRNAME', 'Theme directory name');
+define('_THADMIN_UPLOAD_INSTALL', 'Install after upload');
+define('_THADMIN_UPLOAD_INSTALLATION', 'Process installation');
+define('_THADMIN_UPLOAD_UPLOADED', 'The new theme can be installed now');
+define('_THADMIN_UPLOAD_ERROR', 'No file uploaded');
 ?>
