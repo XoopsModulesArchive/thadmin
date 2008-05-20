@@ -45,7 +45,7 @@
 .clearright{clear:right;height:0;font-size:0;line-height:0;}
 .block{display:block;}
 .hide{display:none;}
-.spacer{padding:003px0;}
+.spacer{padding:0 0 3px 0;}
 .child{padding-left:10px;}
 .sub{padding-left:20px;}
 /* Cursor class */

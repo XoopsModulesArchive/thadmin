@@ -31,14 +31,9 @@ $mainTabs->setCurrent('home', 'tabs');
 $mainTabs->display();
 // Start template class
 $tpl =& new XoopsTpl();
-// Search if hacked file is uploaded
-if (defined('_AD_TH_CPFUNCTION')) {
-    $tpl->assign('hack_set', 1);
-} else {
-    $tpl->assign('hack_set', 0);
-}
 // Get the folder list theme
 $theme_default = thadmin_Setting('theme_admin_set');
+// Load Xoops list class
 XoopsLoad::load('xoopslists');
 $theme_list = XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH.'/modules/' . $xoopsModule->getVar('dirname', 'n') . '/themes/');
 foreach ($theme_list as $theme) {
@@ -51,6 +46,18 @@ foreach ($theme_list as $theme) {
         $i++;
     }
 }
+// Load xoops form
+xoops_load('xoopsformloader');
+// Display upload form
+$form = new XoopsThemeForm(_THADMIN_UPLOAD, 'upload_form', 'upload.php', 'post', true);
+$form->setExtra('enctype="multipart/form-data"');
+$form->addElement(new XoopsFormFile(_THADMIN_UPLOAD_FILE, 'module_file', 0));
+$form->addElement(new XoopsFormRadioYN(_THADMIN_UPLOAD_INSTALL, 'module_install', 1, _YES, _NO));
+$form->addElement(new XoopsFormText(_THADMIN_UPLOAD_DIRNAME, 'module_name', 50, 255));
+$form->addElement(new XoopsFormHidden('op', 'upload'));
+$form->addElement(new XoopsFormButton('', 'mod_button', _SUBMIT, 'submit'));
+// Assign smarty variables
+$tpl->assign('upload_form', $form->render());
 $tpl->assign('themes', $theme_array);
 // Call admin template
 $tpl->display(XOOPS_ROOT_PATH.'/modules/' . $xoopsModule->getVar('dirname', 'n') . '/admin/templates/admin_index.html');
