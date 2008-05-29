@@ -173,14 +173,13 @@ table th, table.outer th,
 #xo-page table.xo-formfields thead th {
   background:#2972c4 url('../img/table-caption3.png') repeat-x left top;
   padding:2px .25em;
-  color:#fff;
+  color:#666;
   font-weight:bold;
-  border:1px solid #19409e;
 }
 table.outer th a,
 #xo-page table.xodata-list thead th a,
 #xo-page table.xo-formfields thead th a {
-  background-color:     inherit;
+  background-color:inherit;
   color:#eee;
 }
 table.outer td,
