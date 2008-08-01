@@ -1,0 +1,21 @@
+<div class="spacer">
+<table>
+  <tbody>
+  <{foreach item=row from=$themes}>
+    <tr>
+      <td class="width25">
+        <img src="<{$row.url}>/<{$row.image}>" alt="<{$row.name}>" title="<{$row.name}>" />
+      </td>
+      <td class="spacer">
+        <div class="spacer"><span class="bold"><{$smarty.const._THADMIN_NAME}></span>&nbsp;<{$row.name}></div>
+        <div class="spacer"><span class="bold"><{$smarty.const._THADMIN_VERSION}></span>&nbsp;<{$row.version}></div>
+        <div class="spacer"><span class="bold"><{$smarty.const._THADMIN_AUTHOR}></span>&nbsp;<{$row.author}></div>
+        <div class="spacer"><span class="bold"><{$smarty.const._THADMIN_ACTIVE}></span>&nbsp;<{if $row.default}><img src="../images/icons/yes.png" alt="Yes" /><{else}><img src="../images/icons/no.png" alt="No" /><{/if}></div>
+      </td>
+    </tr>
+  <{/foreach}>
+  </tbody>
+</table>
+</div>
+<div class="clear spacer">&nbsp;</div>
+<div class="spacer"><{$upload_form}></div>

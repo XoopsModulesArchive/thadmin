@@ -1,0 +1,153 @@
+<{if isset($systemmenu.links.3)}>
+<div class="xo-cpanel-settings">
+  <table>
+    <tbody>
+      <tr>
+        <td class="image" rowspan="2">
+          <img src="<{$theme_icons}>/settings-big.png" alt="<{$smarty.const._MD_AM_PREF}>" title="<{$smarty.const._MD_AM_PREF}>" />
+        </td>
+        <td class="spacer">
+          <a href="<{$xoops_url}>/modules/system/admin.php?fct=preferences"><{$smarty.const._MD_AM_PREF}></a>
+          <div class="spacer extrasmall">
+          <{$smarty.const._MD_AM_PREF_DESC}>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="small spacer">
+          <{foreach item=module from=$systemmenu.links.3.sublinks}>
+          <{if $module.mid != 1}>-
+          <span class="spacer">
+            <{foreach item=cat from=$module.cats}>
+            <a href="<{$cat.link}>"><{$module.name}></a>
+            <{/foreach}>
+          </span>
+          <{/if}>
+          <{/foreach}> -
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<{/if}>
+<{if isset($adminmenu)}>
+<div class="xo-cpanel-modules">
+  <table>
+    <tbody>
+      <tr>
+        <td class="image" rowspan="2">
+          <img src="<{$theme_icons}>/modules-big.png" alt="<{$smarty.const._AD_TH_MODULES}>" title="<{$smarty.const._AD_TH_MODULES}>" />
+        </td>
+        <td class="spacer">
+          <a href="<{$xoops_url}>/modules/system/admin.php?fct=modulesadmin"><{$smarty.const._AD_TH_MODULES}></a>
+          <div class="spacer extrasmall">
+          <{$smarty.const._AD_TH_MODULES_DESC}>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="small spacer">
+          -<{foreach item=module from=$adminmenu key=counter}>
+          <a href="<{$xoops_url}>/modules/<{$module.dirname}>/<{$module.index}>"><{$module.name}></a> -
+          <{/foreach}>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<{/if}>
+<{if isset($systemmenu.links.5)}>
+<div class="xo-cpanel-blocks">
+  <table>
+    <tbody>
+      <tr>
+        <td class="image">
+          <img src="<{$theme_icons}>/blocks-big.png" alt="<{$smarty.const._AD_TH_BLOCKS}>" title="<{$smarty.const._AD_TH_BLOCKS}>" />
+        </td>
+        <td class="spacer">
+          <a href="<{$xoops_url}>/modules/system/admin.php?fct=blocksadmin"><{$smarty.const._AD_TH_BLOCKS}></a>
+          <div class="spacer extrasmall">
+          <{$smarty.const._AD_TH_BLOCKS_DESC}>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<{/if}>
+<{if isset($systemmenu.links.7) || isset($systemmenu.links.8) || isset($systemmenu.links.9) || isset($systemmenu.links.10)}>
+<div class="xo-cpanel-users">
+  <table>
+    <tbody>
+      <tr>
+        <td class="image" rowspan="2">
+          <img src="<{$theme_icons}>/users-big.png" alt="<{$smarty.const._AD_TH_USERS}>" title="<{$smarty.const._AD_TH_USERS}>" />
+        </td>
+        <td class="spacer">
+          <a class="cursordefault" name="users"><{$smarty.const._AD_TH_USERS}></a>
+          <div class="spacer extrasmall">
+          <{$smarty.const._AD_TH_USERS_DESC}>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="spacer small">
+          <{if isset($systemmenu.links.7)}>
+          -&nbsp;<a href='<{$systemmenu.links.7.link}>'><{$systemmenu.links.7.title}></a>&nbsp;
+          <{/if}>
+          <{if isset($systemmenu.links.8)}>
+          -&nbsp;<a href='<{$systemmenu.links.8.link}>'><{$systemmenu.links.8.title}></a>&nbsp;
+          <{/if}>
+          <{if isset($systemmenu.links.9)}>
+          -&nbsp;<a href='<{$systemmenu.links.9.link}>'><{$systemmenu.links.9.title}></a>&nbsp;
+          <{/if}>
+          <{if isset($systemmenu.links.10)}>
+          -&nbsp;<a href='<{$systemmenu.links.10.link}>'><{$systemmenu.links.10.title}></a>&nbsp;-
+          <{/if}>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<{/if}>
+<{if isset($systemmenu.links.11) || isset($systemmenu.links.13) || isset($systemmenu.links.12) || isset($systemmenu.links.1)}>
+<div class="xo-cpanel-tools">
+  <table>
+    <tbody>
+      <tr>
+        <td class="image" rowspan="2">
+          <img src="<{$theme_icons}>/tools-big.png" alt="<{$smarty.const._AD_TH_MISCS}>" title="<{$smarty.const._AD_TH_MISCS}>" />
+        </td>
+        <td class="spacer">
+          <a class="cursordefault" name="tools"><{$smarty.const._AD_TH_MISCS}></a>
+          <div class="spacer extrasmall">
+          <{$smarty.const._AD_TH_MISCS_DESC}>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="spacer small">
+          <{if isset($systemmenu.links.11)}>
+          -&nbsp;<a href='<{$systemmenu.links.11.link}>'><{$systemmenu.links.11.title}></a>&nbsp;
+          <{/if}>
+          <{if isset($systemmenu.links.0)}>
+          -&nbsp;<a href='<{$systemmenu.links.0.link}>'><{$systemmenu.links.0.title}></a>&nbsp;
+          <{/if}>
+          <{if isset($systemmenu.links.3)}>
+          -&nbsp;<a href='<{$systemmenu.links.3.link}>'><{$systemmenu.links.3.title}></a>&nbsp;
+          <{/if}>
+          <{if isset($systemmenu.links.6)}>
+          -&nbsp;<a href='<{$systemmenu.links.6.link}>'><{$systemmenu.links.6.title}></a>&nbsp;
+          <{/if}>
+          <{if isset($systemmenu.links.13)}>
+          -&nbsp;<a href='<{$systemmenu.links.13.link}>'><{$systemmenu.links.13.title}></a>&nbsp;
+          <{/if}>
+          <{if isset($systemmenu.links.12)}>
+          -&nbsp;<a href='<{$systemmenu.links.12.link}>'><{$systemmenu.links.12.title}></a>&nbsp;-
+          <{/if}>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<{/if}>
