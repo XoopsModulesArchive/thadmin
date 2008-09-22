@@ -1,16 +1,12 @@
 <?php
-/*
- You may not change or alter any portion of this comment or credits
- of supporting developers from this source code or any supporting source code 
- which is considered copyrighted (c) material of the original comment or credit authors.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-*/
-
 /**
  * Custom cp_functions from ThAdmin by Andricq Nicolas (AKA MusS)
+ *
+ * LICENSE
+ *
+ * You may not change or alter any portion of this comment or credits
+ * of supporting developers from this source code or any supporting source code
+ * which is considered copyrighted (c) material of the original comment or credit authors.
  *
  * @copyright   The XOOPS Project http://sf.net/projects/xoops/
  * @license     http://www.fsf.org/copyleft/gpl.html GNU public license
@@ -88,6 +84,7 @@ function xoops_thadmin_cp_header()
             }
         }
         $systemmenu = array(
+            'id'      => 1,
             'name'    => $modules[1]->getVar('name'),
             'dirname' => $modules[1]->getVar('dirname'),
             'version' => $modules[1]->getVar('version'),
@@ -118,10 +115,7 @@ function xoops_thadmin_cp_header()
             } else {
                 $menulinks[$modules[$i]->getVar('mid')]['mid'] = $modules[$i]->getVar('mid');
                 $menulinks[$modules[$i]->getVar('mid')]['name'] = $modules[$i]->getVar('name');
-                $menulinks[$modules[$i]->getVar('mid')]['cats'][] = array(
-                    'link'  => XOOPS_URL . '/modules/system/admin.php?fct=preferences&amp;op=showmod&amp;mod=' . $modules[$i]->getVar('mid'),
-                    'title' => _MD_AM_PREF
-                    );
+                $menulinks[$modules[$i]->getVar('mid')]['link'] = XOOPS_URL . '/modules/system/admin.php?fct=preferences&amp;op=showmod&amp;mod=' . $modules[$i]->getVar('mid');
             }
         }
     }
@@ -172,6 +166,11 @@ function xoops_thadmin_cp_header()
     $adminTpl->assign_by_ref('phpextension', $extensions);
     $adminmenucount = (count($system_rights) > 0) ? count($admin_menu) + 1 : count($admin_menu);
     $adminTpl->assign('adminmenucount', $adminmenucount);
+    // Fix an error with current module
+    if ( is_object($xoopsModule) && !$xoopsModule->adminmenu ) {
+        include XOOPS_ROOT_PATH . '/modules/' . $xoopsModule->getVar( 'dirname', 'n' ) . '/' . $xoopsModule->getInfo( 'adminmenu' );
+        $xoopsModule->adminmenu = $adminmenu;
+    }
 }
 
 function xoops_thadmin_cp_footer()

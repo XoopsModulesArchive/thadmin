@@ -9,7 +9,7 @@
         <td class="spacer">
           <a href="<{$xoops_url}>/modules/system/admin.php?fct=preferences"><{$smarty.const._MD_AM_PREF}></a>
           <div class="spacer extrasmall">
-          <{$smarty.const._MD_AM_PREF_DESC}>
+          <{$smarty.const._THADMIN_PREF_DESC}>
           </div>
         </td>
       </tr>
@@ -18,9 +18,9 @@
           <{foreach item=module from=$systemmenu.links.3.sublinks}>
           <{if $module.mid != 1}>-
           <span class="spacer">
-            <{foreach item=cat from=$module.cats}>
-            <a href="<{$cat.link}>"><{$module.name}></a>
-            <{/foreach}>
+            
+            <a href="<{$module.link}>"><{$module.name}></a>
+            
           </span>
           <{/if}>
           <{/foreach}> -
@@ -36,12 +36,12 @@
     <tbody>
       <tr>
         <td class="image" rowspan="2">
-          <img src="<{$theme_icons}>/modules-big.png" alt="<{$smarty.const._AD_TH_MODULES}>" title="<{$smarty.const._AD_TH_MODULES}>" />
+          <img src="<{$theme_icons}>/modules-big.png" alt="<{$smarty.const._THADMIN_MODULES}>" title="<{$smarty.const._THADMIN_MODULES}>" />
         </td>
         <td class="spacer">
-          <a href="<{$xoops_url}>/modules/system/admin.php?fct=modulesadmin"><{$smarty.const._AD_TH_MODULES}></a>
+          <a href="<{$xoops_url}>/modules/system/admin.php?fct=modulesadmin"><{$smarty.const._THADMIN_MODULES}></a>
           <div class="spacer extrasmall">
-          <{$smarty.const._AD_TH_MODULES_DESC}>
+          <{$smarty.const._THADMIN_MODULES_DESC}>
           </div>
         </td>
       </tr>
@@ -62,12 +62,12 @@
     <tbody>
       <tr>
         <td class="image">
-          <img src="<{$theme_icons}>/blocks-big.png" alt="<{$smarty.const._AD_TH_BLOCKS}>" title="<{$smarty.const._AD_TH_BLOCKS}>" />
+          <img src="<{$theme_icons}>/blocks-big.png" alt="<{$smarty.const._THADMIN_BLOCKS}>" title="<{$smarty.const._THADMIN_BLOCKS}>" />
         </td>
         <td class="spacer">
-          <a href="<{$xoops_url}>/modules/system/admin.php?fct=blocksadmin"><{$smarty.const._AD_TH_BLOCKS}></a>
+          <a href="<{$xoops_url}>/modules/system/admin.php?fct=blocksadmin"><{$smarty.const._THADMIN_BLOCKS}></a>
           <div class="spacer extrasmall">
-          <{$smarty.const._AD_TH_BLOCKS_DESC}>
+          <{$smarty.const._THADMIN_BLOCKS_DESC}>
           </div>
         </td>
       </tr>
@@ -81,12 +81,12 @@
     <tbody>
       <tr>
         <td class="image" rowspan="2">
-          <img src="<{$theme_icons}>/users-big.png" alt="<{$smarty.const._AD_TH_USERS}>" title="<{$smarty.const._AD_TH_USERS}>" />
+          <img src="<{$theme_icons}>/users-big.png" alt="<{$smarty.const._THADMIN_USERS}>" title="<{$smarty.const._THADMIN_USERS}>" />
         </td>
         <td class="spacer">
-          <a class="cursordefault" name="users"><{$smarty.const._AD_TH_USERS}></a>
+          <a class="cursordefault" name="users"><{$smarty.const._THADMIN_USERS}></a>
           <div class="spacer extrasmall">
-          <{$smarty.const._AD_TH_USERS_DESC}>
+          <{$smarty.const._THADMIN_USERS_DESC}>
           </div>
         </td>
       </tr>
@@ -116,12 +116,12 @@
     <tbody>
       <tr>
         <td class="image" rowspan="2">
-          <img src="<{$theme_icons}>/tools-big.png" alt="<{$smarty.const._AD_TH_MISCS}>" title="<{$smarty.const._AD_TH_MISCS}>" />
+          <img src="<{$theme_icons}>/tools-big.png" alt="<{$smarty.const._THADMIN_MISCS}>" title="<{$smarty.const._THADMIN_MISCS}>" />
         </td>
         <td class="spacer">
-          <a class="cursordefault" name="tools"><{$smarty.const._AD_TH_MISCS}></a>
+          <a class="cursordefault" name="tools"><{$smarty.const._THADMIN_MISCS}></a>
           <div class="spacer extrasmall">
-          <{$smarty.const._AD_TH_MISCS_DESC}>
+          <{$smarty.const._THADMIN_MISCS_DESC}>
           </div>
         </td>
       </tr>

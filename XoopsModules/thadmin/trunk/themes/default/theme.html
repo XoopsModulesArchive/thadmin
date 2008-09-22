@@ -29,10 +29,10 @@
     <div id="xo-content">
       <!-- Here start the module admin content..... -->
       <{if $cpanel_home}>
-        <!-- Display CPanel -->
-        <{includeq file="$theme_path/xotpl/xocpanel.html"}>
         <!-- Display System overview & PHP extension -->
         <{includeq file="$theme_path/xotpl/xoinfos.html"}>
+        <!-- Display CPanel -->
+        <{includeq file="$theme_path/xotpl/xocpanel.html"}>
         <{if $view_warning}><{$xoops_contents}><{/if}>
       <{else}>
       <{if $xoops_contents}><{$xoops_contents}><{/if}>
