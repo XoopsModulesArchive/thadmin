@@ -22,7 +22,7 @@ if (!$GLOBALS['xoopsSecurity']->check()) {
   exit();
 }
 xoops_load('uploader');
-// Upload the new module file
+// Upload the new theme file
 $uploader = new XoopsMediaUploader(XOOPS_ROOT_PATH.'/modules/' . $xoopsModule->getVar('dirname', 'n') . '/themes', array('application/zip', 'application/x-zip', 'application/x-zip-compressed'), 8388608);
 if($xoopsUser->isAdmin()){
     $uploader->nosizecheck = true;
@@ -31,21 +31,15 @@ $err = array();
 if ($uploader->fetchMedia($_POST['xoops_upload_file'][0])) {
     if (!$uploader->upload()) {
         $err[] = $uploader->getErrors();
-        echo 'rr';
     } else {
-        /*include_once XOOPS_ROOT_PATH.'/class/dUnzip.php';
-        $zip = new dUnzip2(XOOPS_MODULE_PATH.'/'.$uploader->getSavedFileName());
+        include_once XOOPS_ROOT_PATH . '/modules/' . $xoopsModule->getVar('dirname', 'n') . '/class/dUnzip.php';
+        $zip = new dUnzip2( XOOPS_ROOT_PATH . '/modules/' . $xoopsModule->getVar('dirname', 'n') . '/themes/' . $uploader->getSavedFileName() );
         // Activate debug
-        $zip->debug = false;
+        $zip->debug = true;
         // Unzip all the contents of the zipped file to a new folder          
-        $zip->unzipAll(XOOPS_MODULE_PATH);
-        $zip->delete();*/
-        if($_POST['module_install'] && is_dir(XOOPS_ROOT_PATH.'/modules/' . $xoopsModule->getVar('dirname', 'n') . '/themes/'.$_POST['module_name'])) {
-            // To install...
-            redirect_header('index.php', 3, _THADMIN_UPLOAD_INSTALLATION);
-        } else {
-            redirect_header('index.php', 3, _THADMIN_UPLOAD_UPLOADED);
-        }
+        $zip->unzipAll( XOOPS_ROOT_PATH . '/modules/' . $xoopsModule->getVar('dirname', 'n') . '/themes' );
+        $zip->delete();
+        //redirect_header('index.php', 3, _THADMIN_UPLOAD_UPLOADED);
     }
 } else {
     $err[] = sprintf(_FAILFETCHIMG, $_FILES['module_file']['name']);
@@ -57,6 +51,6 @@ if (count($err) > 0) {
     xoops_cp_footer();
     exit();
 }
-redirect_header('index.php', 3, _THADMIN_UPLOAD_ERROR);
+//redirect_header('index.php', 3, _THADMIN_UPLOAD_ERROR);
 
 ?>

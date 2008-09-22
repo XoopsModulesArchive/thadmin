@@ -1,34 +1,26 @@
 <?php
-/*
- You may not change or alter any portion of this comment or credits
- of supporting developers from this source code or any supporting source code 
- which is considered copyrighted (c) material of the original comment or credit authors.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-*/
-
 /**
- * XOOPS ThAdmin module
+ * Module administration help file
+ *
+ * LICENSE
+ *
+ * You may not change or alter any portion of this comment or credits
+ * of supporting developers from this source code or any supporting source code
+ * which is considered copyrighted (c) material of the original comment or credit authors.
  *
  * @copyright   The XOOPS Project http://sourceforge.net/projects/xoops/
  * @license     http://www.fsf.org/copyleft/gpl.html GNU public license
  * @author      Andricq Nicolas (AKA MusS)
- * @since       2.3.0
- * @package     ThAdmin
  * @version     $Id$
+ * @since       2.3.0
  */
 
 // Include header
 require_once 'header.php';
-// Include tabs
-require_once 'tabs.php';
 // Display Admin header
 xoops_cp_header();
 // Display navigation tabs
-$mainTabs->setCurrent('help', 'tabs');
-$mainTabs->display();
+$menu_handler->render( 1 );
 // Start template class
 $tpl =& new XoopsTpl();
 // Assign smarty variables
