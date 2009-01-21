@@ -175,7 +175,7 @@ function xoops_thadmin_cp_header()
 
 function xoops_thadmin_cp_footer()
 {
-    global $xoopsConfig, $xoopsLogger, $xoopsTpl;
+    global $xoopsConfig, $xoopsLogger;
     
     $xoopsLogger->stopTime( 'Module display' );
     

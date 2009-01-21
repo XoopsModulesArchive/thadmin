@@ -19,7 +19,7 @@ if (!defined('XOOPS_ROOT_PATH')) { exit(); }
 
 // Main
 $modversion['name']        = _THADMIN_MODULE_NAME;
-$modversion['version']     = 1.1;
+$modversion['version']     = 1.2;
 $modversion['description'] = _THADMIN_MODULE_DESC;
 $modversion['credits']     = 'Andricq Nicolas (AKA MusS)';
 $modversion['author']      = 'Andricq Nicolas (AKA MusS)';
