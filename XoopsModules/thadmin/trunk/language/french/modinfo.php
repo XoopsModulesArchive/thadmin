@@ -6,12 +6,15 @@
  */
 
 // Main
-define('_MI_TH_NAME', 'ThAdmin');
-define('_MI_TH_DESC', 'ThAdmin est un module pour changer le th&egrave;me de l\'administration');
+define('_THADMIN_MODULE_NAME', 'ThAdmin');
+define('_THADMIN_MODULE_DESC', 'ThAdmin permet de g&eacute;rer l&#39;apparence de votre interface d&#39;administration');
 // Menu
-define('_MI_TH_HOME', 'Accueil');
-define('_MI_TH_HELP', 'Aide');
+define('_THADMIN_MENU_HOME', 'Accueil');
+define('_THADMIN_MENU_HELP', 'Aide');
 // Settings
-define('_MI_TH_ADMINTHEME', 'Th&egrave;me Default');
-define('_MI_TH_ADMINTHEME_DESC', 'Choisissez le th&egrave;me par d&eacute;faut de votre interface d\'administration');
+define('_THADMIN_ADMINTHEME', 'Th&egrave;me par d&eacute;faut');
+define('_THADMIN_ADMINTHEME_DESC', 'S&eacute;lectionner le th&egrave;me par d&eacute;faut de votre interface d&#39;administration');
+define('_THADMIN_CPANELEONLY', 'Afficher les alertes ?');
+define('_THADMIN_CPANELEONLY_DESC', 'Masquer les messages d&#39;alerte sur la page d&#39;accueil du Back office');
 ?>
+

@@ -1,12 +1,12 @@
 <div class="spacer">
-<table>
+<table class="outer">
   <tbody>
   <{foreach item=row from=$themes}>
     <tr>
-      <td class="width25">
+      <td class="odd width25">
         <img src="<{$row.url}>/<{$row.image}>" alt="<{$row.name}>" title="<{$row.name}>" />
       </td>
-      <td class="spacer">
+      <td class="even spacer">
         <div class="spacer"><span class="bold"><{$smarty.const._THADMIN_NAME}></span>&nbsp;<{$row.name}></div>
         <div class="spacer"><span class="bold"><{$smarty.const._THADMIN_VERSION}></span>&nbsp;<{$row.version}></div>
         <div class="spacer"><span class="bold"><{$smarty.const._THADMIN_AUTHOR}></span>&nbsp;<{$row.author}></div>
