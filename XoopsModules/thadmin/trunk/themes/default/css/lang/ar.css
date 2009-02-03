@@ -14,6 +14,9 @@ body{
 .NavMenu .image {
   right:-1px;
 }
+.NavMenu .section {
+     max-width: 300px
+}
 
 /*== from main.css file ==*/
 table
@@ -54,4 +57,8 @@ select {
 div.content {
     direction: rtl;  
     text-align: right;
+}
+#xo-banner-ad {
+    direction: ltr;  
+    text-align: left;
 }
