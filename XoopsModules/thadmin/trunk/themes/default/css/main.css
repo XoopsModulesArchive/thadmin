@@ -50,7 +50,7 @@ input.formTextBox { background: #fff; color:inherit; font-size: .8em; font-famil
 select { font-size: .8em; font-family: verdana, arial, helvetica, sans-serif; border: #000 1px solid;}
 
 /* ===== content module ===== */
-.content { text-align: justify; padding: 0 15px 0px 15px;}
+.content { text-align: justify; }
 
 .xoopsCenter { text-align:center;}
 
