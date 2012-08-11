@@ -6,14 +6,14 @@
  */
 
 // Main
-define('_MI_TH_NAME', 'ThAdmin');
-define('_MI_TH_DESC', 'ThAdmin is a module for manage your administration theme');
+define('_MI_TH_NAME','ThAdmin');
+define('_MI_TH_DESC','ThAdmin is a module for manage your administration theme');
 // Menu
-define('_MI_TH_HOME', 'Home');
-define('_MI_TH_HELP', 'Help');
+define('_MI_TH_HOME','Home');
+define('_MI_TH_HELP','Help');
 // Settings
-define('_MI_TH_ADMINTHEME', 'Default Theme');
-define('_MI_TH_ADMINTHEME_DESC', 'Choose the default theme for your admin area');
-define('_MI_TH_CPANELEONLY', 'Display Warning ?');
-define('_MI_TH_CPANELEONLY_DESC', 'Hide the warning messages on cpanel interface');
+define('_MI_TH_ADMINTHEME','Default Theme');
+define('_MI_TH_ADMINTHEME_DESC','Choose the default theme for your admin area');
+define('_MI_TH_CPANELEONLY','Display Warning ?');
+define('_MI_TH_CPANELEONLY_DESC','Hide the warning messages on cpanel interface');
 ?>
